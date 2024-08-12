@@ -48,7 +48,6 @@ class Ads
         $stmt -> execute();
 
     }
-
     public  function  deleteAds($id)
     {
 
