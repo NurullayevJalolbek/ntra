@@ -57,4 +57,13 @@ class Ads
         $stmt -> execute();
 
     }
+
+
+    public  function  getAds()
+    {
+        return $this -> pdo -> query("SELECT *, ads.address AS address  FROM ads  JOIN  branch 
+        ON  branch.id = ads.branch_id ")->fetchAll(PDO::FETCH_ASSOC);
+
+
+    }
 }

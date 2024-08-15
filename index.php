@@ -22,8 +22,8 @@ require_once  "bootstrap.php";
 
 
 
-//$ads = new App\Ads();
-//$ads->create('title', 'description', 2, 2, 2, 'address', 100, 2);
+$ads = new App\Ads();
+$ads->create('NTRA', 'Malumotlar', 2, 2, 2, 'chilonzor', 100, 2);
 //$ads -> updateAds(3,'TITLE','DESCRIPTION',2,2,2,"Xorazm",100,2);
 //$ads -> deleteAds(3);
 
