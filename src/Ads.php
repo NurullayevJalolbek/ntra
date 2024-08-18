@@ -31,39 +31,57 @@ class Ads
         $stmt->execute();
     }
 
-    public  function  updateAds($id, $title, $description, $user_id, $status_id, $branch_id, $address, $price, $rooms)
+    public function updateAds($id, $title, $description, $user_id, $status_id, $branch_id, $address, $price, $rooms)
     {
         $sql = "UPDATE ads SET title = :title, description = :description, user_id = :user_id, status_id = :status_id,
                branch_id = :branch_id, address = :address, price = :price, rooms = :rooms WHERE id = :id";
-        $stmt = $this -> pdo -> prepare($sql);
-        $stmt -> bindParam(':id', $id, PDO::PARAM_INT);
-        $stmt -> bindParam(':title', $title, PDO::PARAM_STR);
-        $stmt -> bindParam(':description', $description, PDO::PARAM_STR);
-        $stmt -> bindParam(':user_id', $user_id, PDO::PARAM_INT);
-        $stmt -> bindParam(':status_id', $status_id, PDO::PARAM_INT);
-        $stmt -> bindParam(':branch_id', $branch_id, PDO::PARAM_INT);
-        $stmt -> bindParam(':address', $address, PDO::PARAM_STR);
-        $stmt -> bindParam(':price', $price, PDO::PARAM_INT);
-        $stmt -> bindParam(':rooms', $rooms, PDO::PARAM_INT);
-        $stmt -> execute();
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->bindParam(':title', $title, PDO::PARAM_STR);
+        $stmt->bindParam(':description', $description, PDO::PARAM_STR);
+        $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+        $stmt->bindParam(':status_id', $status_id, PDO::PARAM_INT);
+        $stmt->bindParam(':branch_id', $branch_id, PDO::PARAM_INT);
+        $stmt->bindParam(':address', $address, PDO::PARAM_STR);
+        $stmt->bindParam(':price', $price, PDO::PARAM_INT);
+        $stmt->bindParam(':rooms', $rooms, PDO::PARAM_INT);
+        $stmt->execute();
 
     }
-    public  function  deleteAds($id)
+
+    public function deleteAds($id)
     {
 
         $sql = "DELETE FROM ads WHERE id = :id";
-        $stmt = $this -> pdo -> prepare($sql);
-        $stmt -> bindParam(':id', $id, PDO::PARAM_INT);
-        $stmt -> execute();
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
 
     }
 
-
-    public  function  getAds()
+    public  function  getAd ($id)
     {
-        return $this -> pdo -> query("SELECT *, ads.address AS address  FROM ads  JOIN  branch 
+
+        $sql = "SELECT * FROM ads WHERE id = :id";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+
+
+    }
+
+    public function getAds()
+    {
+        return $this->pdo->query("SELECT *, ads.id AS id, ads.address AS address  FROM ads  JOIN  branch 
         ON  branch.id = ads.branch_id ")->fetchAll(PDO::FETCH_ASSOC);
 
 
     }
 }
+
+
+
+
+
+

@@ -2,8 +2,10 @@
 <?php
 require_once  "../bootstrap.php";
 require_once  "../functions.php";
+
+require_once  "../router.php";
 ?>
-?>
+
 <!doctype html>
 <html  lang="en">
 <head>

@@ -23,7 +23,7 @@ require_once  "bootstrap.php";
 
 
 $ads = new App\Ads();
-$ads->create('NTRA', 'Malumotlar', 2, 2, 2, 'chilonzor', 100, 2);
+$ads->create('1 xonali', 'Toshkent / CHilonzor  ', 2, 2, 2, 'Chilonzor ', 400, 2);
 //$ads -> updateAds(3,'TITLE','DESCRIPTION',2,2,2,"Xorazm",100,2);
 //$ads -> deleteAds(3);
 
