@@ -18,7 +18,6 @@
     $ads = getAds();
 
 
-
     foreach ($ads as $ad):?>
         <div class="w-72 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
             <a href="/ads/<?php echo $ad['id'] ?> ">

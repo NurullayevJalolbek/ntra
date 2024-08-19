@@ -4,8 +4,8 @@ declare( strict_types = 1 );
 
 use App\Router;
 
-Router::get('/ads/{id}', function(int $id){
+Router::get('/', fn() => loadView ("home"));
 
-    loadView(basePath("/controller/showAd.php"), ['id' => $id]);
-   // require_once basePath("/controller/showAd.php");
+Router::get('/ads/{id}', function(int $id){
+    loadController("showAd", ['id' => $id]);
 });

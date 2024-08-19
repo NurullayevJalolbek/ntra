@@ -73,7 +73,7 @@ class Ads
 
     public function getAds()
     {
-        return $this->pdo->query("SELECT *, ads.id AS id, ads.address AS address  FROM ads  JOIN  branch 
+        return $this->pdo->query("SELECT *,ads.id AS id, ads.address AS address  FROM ads  JOIN  branch 
         ON  branch.id = ads.branch_id ")->fetchAll(PDO::FETCH_ASSOC);
 
 
