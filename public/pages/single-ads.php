@@ -82,3 +82,8 @@ loadPartials("navbar");
         </div>
     </div>
 </div>
+
+
+
+<?php loadPartials("footer"); ?>
+

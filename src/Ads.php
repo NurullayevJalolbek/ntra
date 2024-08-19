@@ -13,7 +13,7 @@ class Ads
         $this->pdo = DB::connect();
     }
 
-    public function create($title, $description, $user_id, $status_id, $branch_id, $address, $price, $rooms)
+    public function create($title, $description, $user_id, $status_id, $branch_id, $address, $price, $rooms): void
     {
         // SQL so'rovini tayyorlash
         $stmt = $this->pdo->prepare("INSERT INTO ads (title, description, user_id, status_id, branch_id, address, price, rooms, created_at) 

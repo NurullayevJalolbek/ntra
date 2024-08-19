@@ -4,10 +4,11 @@ declare( strict_types = 1 );
 
 use App\Router;
 
-Router::get('/', fn() => loadView ("home"));
+Router::get('/', fn() => LoadView ("home"));
 
 Router::get('/ads/{id}', function(int $id){
-    loadController("showAd", ['id' => $id]);
+    LoadController("showAd", ['id' => $id]);
 });
 
-Router::get("create/ads", fn() => loadController("createAd"));
+Router::get("/create/ads", fn() => LoadView("admin/create-ads"));
+Router::post("/create/ads", fn() => LoadController("createAd"));
