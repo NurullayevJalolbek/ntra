@@ -1,108 +1,227 @@
-<nav class="bg-gray-800">
-    <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-        <div class="relative flex h-16 items-center justify-between">
-            <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                <!-- Mobile menu button-->
-                <button type="button"
-                        class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
-                        aria-controls="mobile-menu" aria-expanded="false">
-                    <span class="absolute -inset-0.5"></span>
-                    <span class="sr-only">Open main menu</span>
-                    <!--
-                      Icon when menu is closed.
+<nav id="topnav" class="defaultscroll is-sticky">
+    <div class="container relative">
+        <!-- Start Logo container-->
+        <a class="logo" href="index.html">
+                    <span class="inline-block dark:hidden">
+                        <img src="assets/images/logo-dark.png" class="l-dark" height="24" alt="">
+                        <img src="assets/images/logo-light.png" class="l-light" height="24" alt="">
+                    </span>
+            <img src="assets/images/logo-light.png" height="24" class="hidden dark:inline-block" alt="">
+        </a>
+        <!-- End Logo container-->
 
-                      Menu open: "hidden", Menu closed: "block"
-                    -->
-                    <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                         aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
-                    </svg>
-                    <!--
-                      Icon when menu is open.
-
-                      Menu open: "block", Menu closed: "hidden"
-                    -->
-                    <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                         aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
-                    </svg>
-                </button>
-            </div>
-            <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                <div class="flex flex-shrink-0 items-center">
-                    <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-                         alt="Your Company">
-                </div>
-                <div class="hidden sm:ml-6 sm:block">
-                    <div class="flex space-x-4">
-                        <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                        <a href="/" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
-                           aria-current="page">Ads</a>
-                        <a href="/create/ads" class="rounded-md  px-3 py-2 text-sm font-medium text-white">Create Ad</a>
-                        <a href="#"
-                           class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Users</a>
-                        <a href="#"
-                           class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Users</a>
-                        <a href="#"
-                           class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Status</a>
+        <!-- Start Mobile Toggle -->
+        <div class="menu-extras">
+            <div class="menu-item">
+                <a class="navbar-toggle" id="isToggle" onclick="toggleMenu()">
+                    <div class="lines">
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </div>
-                </div>
-            </div>
-            <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                <button type="button"
-                        class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-                    <span class="absolute -inset-1.5"></span>
-                    <span class="sr-only">View notifications</span>
-                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                         aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                              d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"/>
-                    </svg>
-                </button>
-
-                <!-- Profile dropdown -->
-                <div class="relative ml-3">
-                    <div>
-                        <button type="button"
-                                class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-                                id="user-menu-button" aria-expanded="false" aria-haspopup="true">
-                            <span class="absolute -inset-1.5"></span>
-                            <span class="sr-only">Open user menu</span>
-                            <img class="h-8 w-8 rounded-full"
-                                 src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                                 alt="">
-                        </button>
-                    </div>
-
-                    <!--
-                      Dropdown menu, show/hide based on menu state.
-
-                      Entering: "transition ease-out duration-100"
-                        From: "transform opacity-0 scale-95"
-                        To: "transform opacity-100 scale-100"
-                      Leaving: "transition ease-in duration-75"
-                        From: "transform opacity-100 scale-100"
-                        To: "transform opacity-0 scale-95"
-                    -->
-
-                </div>
+                </a>
             </div>
         </div>
-    </div>
+        <!-- End Mobile Toggle -->
 
-    <!-- Mobile menu, show/hide based on menu state. -->
-    <div class="sm:hidden" id="mobile-menu">
-        <div class="space-y-1 px-2 pb-3 pt-2">
-            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-            <a href="#" class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white"
-               aria-current="page">Ads</a>
-            <a href="#"
-               class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Users</a>
-            <a href="#"
-               class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Branches</a>
-            <a href="#"
-               class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Status</a>
-        </div>
-    </div>
-</nav>
+        <!--Login button Start-->
+        <ul class="buy-button list-none mb-0">
+            <li class="inline mb-0">
+                <a href="auth-login.html" class="btn btn-icon bg-green-600 hover:bg-green-700 border-green-600 dark:border-green-600 text-white rounded-full"><i data-feather="user" class="size-4 stroke-[3]"></i></a>
+            </li>
+            <li class="sm:inline ps-1 mb-0 hidden">
+                <a href="auth-signup.html" class="btn bg-green-600 hover:bg-green-700 border-green-600 dark:border-green-600 text-white rounded-full">Signup</a>
+            </li>
+        </ul>
+        <!--Login button End-->
+
+        <div id="navigation">
+            <!-- Navigation Menu-->
+            <ul class="navigation-menu justify-end nav-light">
+                <li class="has-submenu parent-parent-menu-item">
+                    <a href="javascript:void(0)">Home</a><span class="menu-arrow"></span>
+
+                    <ul class="submenu megamenu">
+                        <li>
+                            <ul>
+                                <li>
+                                    <a href="index.html" class="sub-menu-item">
+                                        <div class="lg:text-center">
+                                            <span class="none lg:block"><img src="assets/images/demos/hero-one.png" class="img-fluid rounded shadow-md" alt=""></span>
+                                            <span class="lg:mt-2 block">Hero One</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="index-two.html" class="sub-menu-item">
+                                        <div class="lg:text-center">
+                                            <span class="none lg:block"><img src="assets/images/demos/hero-two.png" class="img-fluid rounded shadow-md" alt=""></span>
+                                            <span class="lg:mt-2 block">Hero Two</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <ul>
+                                <li>
+                                    <a href="index-three.html" class="sub-menu-item">
+                                        <div class="lg:text-center">
+                                            <span class="none lg:block"><img src="assets/images/demos/hero-three.png" class="img-fluid rounded shadow-md" alt=""></span>
+                                            <span class="lg:mt-2 block">Hero Three</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="index-four.html" class="sub-menu-item">
+                                        <div class="lg:text-center">
+                                            <span class="none lg:block"><img src="assets/images/demos/hero-four.png" class="img-fluid rounded shadow-md" alt=""></span>
+                                            <span class="lg:mt-2 block">Hero Four</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <ul>
+                                <li>
+                                    <a href="index-five.html" class="sub-menu-item">
+                                        <div class="lg:text-center">
+                                            <span class="none lg:block"><img src="assets/images/demos/hero-five.png" class="img-fluid rounded shadow-md" alt=""></span>
+                                            <span class="lg:mt-2 block">Hero Five</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="index-six.html" class="sub-menu-item">
+                                        <div class="lg:text-center">
+                                            <span class="none lg:block"><img src="assets/images/demos/hero-six.png" class="img-fluid rounded shadow-md" alt=""></span>
+                                            <span class="lg:mt-2 block">Hero Six</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <ul>
+                                <li>
+                                    <a href="index-seven.html" class="sub-menu-item">
+                                        <div class="lg:text-center">
+                                            <span class="none lg:block"><img src="assets/images/demos/hero-seven.png" class="img-fluid rounded shadow-md" alt=""></span>
+                                            <span class="lg:mt-2 block">Hero Seven</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="index-eight.html" class="sub-menu-item">
+                                        <div class="lg:text-center">
+                                            <span class="none lg:block"><img src="assets/images/demos/hero-eight.png" class="img-fluid rounded shadow-md" alt=""></span>
+                                            <span class="lg:mt-2 block">Hero Eight</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <ul>
+                                <li>
+                                    <a href="index-nine.html" class="sub-menu-item">
+                                        <div class="lg:text-center">
+                                            <span class="none lg:block"><img src="assets/images/demos/hero-nine.png" class="img-fluid rounded shadow-md" alt=""></span>
+                                            <span class="lg:mt-2 block">Hero Nine <span class="bg-yellow-500 inline-block text-white text-[10px] font-bold px-2.5 py-0.5 rounded h-5 ms-1">New</span></span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li><a href="buy.html" class="sub-menu-item">Buy</a></li>
+
+                <li><a href="sell.html" class="sub-menu-item">Sell</a></li>
+
+                <li class="has-submenu parent-parent-menu-item">
+                    <a href="javascript:void(0)">Listing</a><span class="menu-arrow"></span>
+                    <ul class="submenu">
+                        <li class="has-submenu parent-menu-item"><a href="javascript:void(0)"> Grid View </a><span class="submenu-arrow"></span>
+                            <ul class="submenu">
+                                <li><a href="grid.html" class="sub-menu-item">Grid Listing</a></li>
+                                <li><a href="grid-sidebar.html" class="sub-menu-item">Grid Sidebar </a></li>
+                                <li><a href="grid-map.html" class="sub-menu-item">Grid With Map</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-submenu parent-menu-item"><a href="javascript:void(0)"> List View </a><span class="submenu-arrow"></span>
+                            <ul class="submenu">
+                                <li><a href="list.html" class="sub-menu-item">List Listing</a></li>
+                                <li><a href="list-sidebar.html" class="sub-menu-item">List Sidebar </a></li>
+                                <li><a href="list-map.html" class="sub-menu-item">List With Map</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-submenu parent-menu-item"><a href="javascript:void(0)"> Property Detail</a><span class="submenu-arrow"></span>
+                            <ul class="submenu">
+                                <li><a href="property-detail.html" class="sub-menu-item">Property Detail</a></li>
+                                <li><a href="property-detail-two.html" class="sub-menu-item">Property Detail Two</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="has-submenu parent-parent-menu-item">
+                    <a href="javascript:void(0)">Pages</a><span class="menu-arrow"></span>
+                    <ul class="submenu">
+                        <li><a href="aboutus.html" class="sub-menu-item">About Us</a></li>
+                        <li><a href="features.html" class="sub-menu-item">Featues</a></li>
+                        <li><a href="pricing.html" class="sub-menu-item">Pricing</a></li>
+                        <li><a href="faqs.html" class="sub-menu-item">Faqs</a></li>
+                        <li class="has-submenu parent-menu-item"><a href="javascript:void(0)"> Agents</a><span class="submenu-arrow"></span>
+                            <ul class="submenu">
+                                <li><a href="agents.html" class="sub-menu-item">Agents</a></li>
+                                <li><a href="agent-profile.html" class="sub-menu-item">Agent Profile</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-submenu parent-menu-item"><a href="javascript:void(0)"> Agencies</a><span class="submenu-arrow"></span>
+                            <ul class="submenu">
+                                <li><a href="agencies.html" class="sub-menu-item">Agencies</a></li>
+                                <li><a href="agency-profile.html" class="sub-menu-item">Agency Profile</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-submenu parent-menu-item"><a href="javascript:void(0)"> Auth Pages </a><span class="submenu-arrow"></span>
+                            <ul class="submenu">
+                                <li><a href="auth-login.html" class="sub-menu-item">Login</a></li>
+                                <li><a href="auth-signup.html" class="sub-menu-item">Signup</a></li>
+                                <li><a href="auth-re-password.html" class="sub-menu-item">Reset Password</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-submenu parent-menu-item"><a href="javascript:void(0)"> Utility </a><span class="submenu-arrow"></span>
+                            <ul class="submenu">
+                                <li><a href="terms.html" class="sub-menu-item">Terms of Services</a></li>
+                                <li><a href="privacy.html" class="sub-menu-item">Privacy Policy</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-submenu parent-menu-item"><a href="javascript:void(0)"> Blog </a><span class="submenu-arrow"></span>
+                            <ul class="submenu">
+                                <li><a href="blogs.html" class="sub-menu-item"> Blogs</a></li>
+                                <li><a href="blog-sidebar.html" class="sub-menu-item"> Blog Sidebar</a></li>
+                                <li><a href="blog-detail.html" class="sub-menu-item"> Blog Detail</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-submenu parent-menu-item"><a href="javascript:void(0)"> Special </a><span class="submenu-arrow"></span>
+                            <ul class="submenu">
+                                <li><a href="comingsoon.html" class="sub-menu-item">Comingsoon</a></li>
+                                <li><a href="maintenance.html" class="sub-menu-item">Maintenance</a></li>
+                                <li><a href="404.html" class="sub-menu-item">404! Error</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li><a href="contact.html" class="sub-menu-item">Contact</a></li>
+            </ul><!--end navigation menu-->
+        </div><!--end navigation-->
+    </div><!--end container-->
+</nav><!--end header-->

@@ -11,78 +11,112 @@ loadPartials("navbar");
 
 ?>
 
-<div class="container">
-    <div class="row">
-        <!-- Asosiy Kontent -->
-        <div class="col-lg-8">
-            <!-- Birlashtirilgan Uy Kartasi -->
-            <div class="property-card">
-                <!-- Rasm Galereyasi -->
-                <div id="propertyCarousel" class="carousel slide mb-3" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="https://via.placeholder.com/800x400.png?text=Uy+1" class="d-block w-100" alt="Uy Rasmi 1">
+<section class="relative md:py-24 pt-24 pb-16">
+    <div class="container relative">
+        <div class="grid md:grid-cols-12 grid-cols-1 gap-[30px]">
+            <div class="lg:col-span-8 md:col-span-7">
+                <div class="grid grid-cols-1 relative">
+                    <div class="tiny-one-item">
+                        <div class="tiny-slide">
+                            <img src="../assets/images/property/single/1.jpg" class="rounded-md shadow dark:shadow-gray-700" alt="">
                         </div>
-                        <div class="carousel-item">
-                            <img src="https://via.placeholder.com/800x400.png?text=Uy+2" class="d-block w-100" alt="Uy Rasmi 2">
+
+                        <div class="tiny-slide">
+                            <img src="../assets/images/property/single/2.jpg" class="rounded-md shadow dark:shadow-gray-700" alt="">
                         </div>
-                        <div class="carousel-item">
-                            <img src="https://via.placeholder.com/800x400.png?text=Uy+3" class="d-block w-100" alt="Uy Rasmi 3">
+
+                        <div class="tiny-slide">
+                            <img src="../assets/images/property/single/3.jpg" class="rounded-md shadow dark:shadow-gray-700" alt="">
+                        </div>
+
+                        <div class="tiny-slide">
+                            <img src="../assets/images/property/single/4.jpg" class="rounded-md shadow dark:shadow-gray-700" alt="">
+                        </div>
+
+                        <div class="tiny-slide">
+                            <img src="../assets/images/property/single/5.jpg" class="rounded-md shadow dark:shadow-gray-700" alt="">
                         </div>
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#propertyCarousel" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Oldingi</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#propertyCarousel" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Keyingi</span>
-                    </button>
-                    <ol class="carousel-indicators">
-                        <li data-bs-target="#propertyCarousel" data-bs-slide-to="0" class="active"></li>
-                        <li data-bs-target="#propertyCarousel" data-bs-slide-to="1"></li>
-                        <li data-bs-target="#propertyCarousel" data-bs-slide-to="2"></li>
-                    </ol>
                 </div>
 
-                <!-- Uy Tafsilotlari -->
-                <div class="property-title"> <?php  echo $ad['title']; ?></div>
-                <div class="property-price"><?php  echo "$". $ad['price']; ?></div>
+                <h4 class="text-2xl font-medium mt-6 mb-3"><?php echo $ad['title']?></h4>
+                <span class="text-slate-400 flex items-center"><i data-feather="map-pin" class="size-5 me-2"></i> <?php echo $ad['address']?></span>
 
-                <div class="property-description mt-3">
-                    <p><strong> <?php echo  $ad['address'] ?></strong></p>
-                    <p><strong> Description </strong><br><?php echo $ad['description'] ?></p>
+                <ul class="py-6 flex items-center list-none">
+                    <li class="flex items-center lg:me-6 me-4">
+                        <i class="uil uil-compress-arrows lg:text-3xl text-2xl me-2 text-green-600"></i>
+                        <span class="lg:text-xl">8000sqf</span>
+                    </li>
+
+                    <li class="flex items-center lg:me-6 me-4">
+                        <i class="uil uil-bed-double lg:text-3xl text-2xl me-2 text-green-600"></i>
+                        <span class="lg:text-xl"><?php echo $ad['rooms'].' xonali'?></span>
+                    </li>
+
+                    <li class="flex items-center">
+                        <i class="uil uil-bath lg:text-3xl text-2xl me-2 text-green-600"></i>
+                        <span class="lg:text-xl">4 Baths</span>
+                    </li>
+                </ul>
+                <h3> Description </h3>
+                <?php echo $ad['description']?>
+                <div class="w-full leading-[0] border-0 mt-6">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39206.002432144705!2d-95.4973981212445!3d29.709510002925988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640c16de81f3ca5%3A0xf43e0b60ae539ac9!2sGerald+D.+Hines+Waterwall+Park!5e0!3m2!1sen!2sin!4v1566305861440!5m2!1sen!2sin" style="border:0" class="w-full h-[500px]" allowfullscreen></iframe>
                 </div>
-                <!--                <ul class="property-details">-->
-                <!--                    <li><strong>Yerni maydoni (sotix):</strong> 3.3 sotix</li>-->
-                <!--                    <li><strong>Uy qavatlari:</strong> 1 qavat</li>-->
-                <!--                    <li><strong>Xonalar soni:</strong> 4 xonalar</li>-->
-                <!--                    <li><strong>Sanuzellar soni:</strong> 2</li>-->
-                <!--                    <li><strong>Podval:</strong> Mavjud</li>-->
-                <!--                    <li><strong>Yozgi oshxona:</strong> Yo'q</li>-->
-                <!--                    <li><strong>Uy ta'miri:</strong> Zo'r</li>-->
-                <!--                    <li><strong>Qurilish turi:</strong> G'isht</li>-->
-                <!--                    <li><strong>Manzil:</strong> Qizil Sholkor yonida, Mayskiy posyolkasi oldida, Baltagovka mahallasida</li>-->
-                <!--                </ul>-->
-            </div>
-        </div>
-
-        <!-- Reklamachi haqida malumot -->
-        <div class="col-lg-4">
-            <div class="advertiser-card">
-                <h5>Reklama beruvchi </h5>
-                <p><strong>Nurullayev Jalolbek </strong></p>
-                <button class="btn btn-warning"> +998937381028  Aloqa uchun</button>
             </div>
 
-            <!-- Geolokatsiya -->
-            <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2995.4458121419097!2d69.24102831542194!3d41.3130299792725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38aef4bdff1a87d3%3A0x781324c57fd02112!2sTashkent%20City!5e0!3m2!1sen!2suz!4v1690280330291!5m2!1sen!2suz" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="lg:col-span-4 md:col-span-5">
+                <div class="sticky top-20">
+                    <div class="rounded-md bg-slate-50 dark:bg-slate-800 shadow dark:shadow-gray-700">
+                        <div class="p-6">
+                            <h5 class="text-2xl font-medium">Narxi </h5>
+
+                            <div class="flex justify-between items-center mt-4">
+                                <span class="text-xl font-medium">$ <?php echo $ad['price']?></span>
+
+                                <span class="bg-green-600/10 text-green-600 text-sm px-2.5 py-0.75 rounded h-6">For Sale</span>
+                            </div>
+
+                            <ul class="list-none mt-4">
+                                <li class="flex justify-between items-center">
+                                    <span class="text-slate-400 text-sm">Days on Hously</span>
+                                    <span class="font-medium text-sm">124 Days</span>
+                                </li>
+
+                                <li class="flex justify-between items-center mt-2">
+                                    <span class="text-slate-400 text-sm">Price per sq ft</span>
+                                    <span class="font-medium text-sm">$ 186</span>
+                                </li>
+
+                                <li class="flex justify-between items-center mt-2">
+                                    <span class="text-slate-400 text-sm"><?php echo $ad['created_at']?></span>
+                                    <span class="font-medium text-sm">$ 1497/Monthly</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="flex">
+                            <div class="p-1 w-1/2">
+                                <a href="" class="btn bg-green-600 hover:bg-green-700 text-white rounded-md w-full">Book Now</a>
+                            </div>
+                            <div class="p-1 w-1/2">
+                                <a href="" class="btn bg-green-600 hover:bg-green-700 text-white rounded-md w-full">Offer Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-12 text-center">
+                        <h3 class="mb-6 text-xl leading-normal font-medium text-black dark:text-white">Have Question ? Get in touch!</h3>
+
+                        <div class="mt-6">
+                            <a href="contact.html" class="btn bg-transparent hover:bg-green-600 border border-green-600 text-green-600 hover:text-white rounded-md"><i class="uil uil-phone align-middle me-2"></i> Contact us</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
-
+</section><!--end section-->
 
 
 <?php loadPartials("footer"); ?>

@@ -1,83 +1,32 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../styles/main.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <title>Hously - Tailwind CSS Real Estate Landing & Admin Dashboard Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta content="Real Estate Website Landing Page" name="description" />
+    <meta content="Real Estate, buy, sell, Rent, tailwind Css" name="keywords" />
+    <meta name="author" content="Shreethemes" />
+    <meta name="website" content="https://shreethemes.in" />
+    <meta name="email" content="support@shreethemes.in" />
+    <meta name="version" content="2.2.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
+    <!-- favicon -->
+    <link rel="shortcut icon" href="../assets/images/favicon.ico" />
 
-
-    <style>
-        body {
-            background-color: #f8f9fa;
-        }
-        .property-card {
-            border-radius: 10px;
-            background-color: #ffffff;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-        }
-        .property-title {
-            font-size: 24px;
-            font-weight: bold;
-            margin-top: 10px;
-        }
-        .property-price {
-            font-size: 28px;
-            color: #007bff;
-            font-weight: bold;
-            margin-top: 10px;
-        }
-        .property-details {
-            list-style-type: none;
-            padding-left: 0;
-        }
-        .property-details li {
-            margin-bottom: 10px;
-            font-size: 16px;
-        }
-        .property-description {
-            margin-top: 20px;
-        }
-        .advertiser-card {
-            padding: 15px;
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
-        }
-        .advertiser-card h5 {
-            margin-bottom: 15px;
-            font-weight: bold;
-        }
-        .advertiser-card .btn {
-            width: 100%;
-            margin-bottom: 15px;
-        }
-        .property-gallery img {
-            width: 100%;
-            border-radius: 10px;
-            margin-bottom: 10px;
-        }
-        .map-container {
-            margin-top: 20px;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-        iframe {
-            border: 0;
-            width: 100%;
-            height: 300px;
-        }
-    </style>
-
-    <title> NTRA - Rent helper </title>
+    <!-- Css -->
+    <link href="../assets/libs/tiny-slider/tiny-slider.css" rel="stylesheet">
+    <link href="../assets/libs/tobii/css/tobii.min.css" rel="stylesheet">
+    <link href="../assets/libs/choices.js/public/assets/styles/choices.min.css" rel="stylesheet">
+    <link href="../assets/libs/swiper/css/swiper.min.css" rel="stylesheet">
+    <!-- Main Css -->
+    <link href="../assets/libs/@iconscout/unicons/css/line.css" type="text/css" rel="stylesheet" />
+    <link href="../assets/libs/@mdi/font/css/materialdesignicons.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../assets/css/tailwind.css" />
 
 </head>
-<body>
+
+<body class="dark:bg-slate-900">
+
+
