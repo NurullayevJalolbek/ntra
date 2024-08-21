@@ -10,5 +10,5 @@ Router::get('/ads/{id}', function(int $id){
     LoadController("showAd", ['id' => $id]);
 });
 
-Router::get("/create/ads", fn() => LoadView("dashboard/create-ads"));
+Router::get("/create/ads", fn() => LoadView("dashboard/create-ad"));
 Router::post("/create/ads", fn() => LoadController("createAd"));
