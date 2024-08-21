@@ -9,6 +9,10 @@ $address = $_POST['address'];
 $rooms = (int)$_POST['rooms'];
 $price = (float)$_POST['price'];
 $branch = (int)$_POST['branch'];
+$send = (string)$_POST['send'];
+
+dd($_POST);
+//dd($_POST);
 
 if ($_POST['title']
     && $_POST['description']

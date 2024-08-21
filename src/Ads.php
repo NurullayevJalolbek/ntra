@@ -61,16 +61,18 @@ class Ads
 
     }
 
-    public  function  getAd ($id)
+    public function getAd($id)
     {
+        $query = "SELECT ads.*, name AS image
+                  FROM ads
+                    JOIN ads_image ON ads.id = ads_image.ads_id
+                  WHERE ads.id = :id";
 
-        $sql = "SELECT * FROM ads WHERE id = :id";
-        $stmt = $this->pdo->prepare($sql);
-        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt = $this->pdo->prepare($query);
+        $stmt->bindParam(':id', $id);
         $stmt->execute();
-        return $stmt->fetch(PDO::FETCH_ASSOC);
 
-
+        return $stmt->fetch();
     }
 
     public function getAds()
