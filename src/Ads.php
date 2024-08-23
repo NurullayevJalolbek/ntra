@@ -63,10 +63,15 @@ class Ads
 
     public function getAd($id)
     {
-        $query = "SELECT ads.*, name AS image
-                  FROM ads
-                    JOIN ads_image ON ads.id = ads_image.ads_id
-                  WHERE ads.id = :id";
+        $query = "SELECT ads.*, 
+                     ads_image.name AS image, 
+                     status.name AS status_name, 
+                     branch.address AS branch_address
+              FROM ads
+              JOIN ads_image ON ads.id = ads_image.ads_id
+              JOIN status ON ads.status_id = status.id
+              JOIN branch ON ads.branch_id = branch.id
+              WHERE ads.id = :id";
 
         $stmt = $this->pdo->prepare($query);
         $stmt->bindParam(':id', $id);
@@ -74,6 +79,7 @@ class Ads
 
         return $stmt->fetch();
     }
+
 
     public function getAds()
     {

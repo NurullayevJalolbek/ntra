@@ -3,6 +3,13 @@
 declare(strict_types=1);
 loadPartials('header');
 loadPartials('navbar');
+
+
+/**
+ * @var  $brenchlar
+ */
+
+
 ?>
 
 
@@ -228,7 +235,7 @@ loadPartials('navbar');
                                         </div>
                                     </div>
 
-                                    <div class="md:col-span-4 col-span-12 hidden">
+                                    <div class="md:col-span-4 col-span-12 hidden ">
                                         <div class="form-icon relative mt-2">
                                             <input name="branch" value="1" type="number" class="form-input ps-11">
                                         </div>
@@ -238,6 +245,21 @@ loadPartials('navbar');
                                         <label for="address" class="font-medium">Manzil</label>
                                         <input name="address" id="address" type="text" class="form-input mt-2" placeholder="Manzil:">
                                     </div>
+                                    <div class="md:col-span-4 col-span-12">
+                                        <label for="status" class="font-medium">Status</label>
+
+                                        <div class="form-icon relative mt-2">
+                                            <select name="status" class="form-input ps-11">
+                                                <?php  foreach ( $brenchllar as $branch ) : ?>
+                                                <option value=<?php echo $branch['id'] ?>><?php echo $branch['name'] ?></option>
+                                                    <?php endforeach; ?>
+
+
+                                            </select>
+                                        </div>
+                                    </div>
+
+
                                     <div class="col-span-12">
                                         <label for="price" class="font-medium">Narxi:</label>
                                         <div class="form-icon relative mt-2">
@@ -253,7 +275,7 @@ loadPartials('navbar');
                                     </div>
                                 </div>
 
-                                <button type="submit" id="submit" name="send" class="btn bg-green-600 hover:bg-green-700 border-green-600 hover:border-green-700 text-white rounded-md mt-5">Add Property</button>
+                                <button type="submit" id="submit" class="btn bg-green-600 hover:bg-green-700 border-green-600 hover:border-green-700 text-white rounded-md mt-5">Add Property</button>
                             </form>
                         </div>
                     </div>

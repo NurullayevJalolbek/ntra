@@ -9,8 +9,9 @@ loadPartials("navbar");
  * @var  $ad
  */
 
-
+//dd($ad);
 ?>
+
 
 <section class="relative md:py-24 pt-24 pb-16">
     <div class="container relative">
@@ -75,7 +76,7 @@ loadPartials("navbar");
                             <div class="flex justify-between items-center mt-4">
                                 <span class="text-xl font-medium">$ <?php echo $ad['price']?></span>
 
-                                <span class="bg-green-600/10 text-green-600 text-sm px-2.5 py-0.75 rounded h-6">For Sale</span>
+                                <span class="bg-green-600/10 text-green-600 text-sm px-2.5 py-0.75 rounded h-6"> <?php echo $ad['status_name'] ?></span>
                             </div>
 
                             <ul class="list-none mt-4">

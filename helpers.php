@@ -10,11 +10,6 @@ function dd($args)
 
 }
 
-function getAds()
-{
-    return (new \App\Ads())->getAds();
-
-}
 
 
 function  basePath($path)

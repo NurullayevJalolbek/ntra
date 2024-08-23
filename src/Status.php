@@ -19,6 +19,8 @@ class Status
         $stmt -> bindParam(':name', $name, PDO::PARAM_STR);
         $stmt -> execute();
 
+        return $this->pdo->lastInsertId();
+
     }
 
     public  function  updateStatus($id, $name)

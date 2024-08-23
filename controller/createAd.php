@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 use App\Ads;
 
+
+
 $title = $_POST['title'];
 $description = $_POST['description'];
 $address = $_POST['address'];
@@ -11,7 +13,7 @@ $price = (float)$_POST['price'];
 $branch = (int)$_POST['branch'];
 $send = (string)$_POST['send'];
 
-dd($_POST);
+//dd($_POST);
 //dd($_POST);
 
 if ($_POST['title']
@@ -20,8 +22,8 @@ if ($_POST['title']
     && $_POST['rooms']
     && $_POST['price']) {
 
+    $newAdsId = (new Ads())->create($title, $description, 2, 5, 3, $address, $price, $rooms);
 
-    $newAdsId = (new Ads())->create($title, $description, 2, 2, 2, $address, $price, $rooms);
 
 
     if ($newAdsId) {

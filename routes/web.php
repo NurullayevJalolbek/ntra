@@ -10,5 +10,29 @@ Router::get('/ads/{id}', function(int $id){
     LoadController("showAd", ['id' => $id]);
 });
 
-Router::get("/create/ads", fn() => LoadView("dashboard/create-ad"));
+Router::get("/create/ads", fn() => LoadController("create-AD"));
+
 Router::post("/create/ads", fn() => LoadController("createAd"));
+
+
+Router::get("/create/status", fn() => LoadView("dashboard/create-status"));
+Router::post("/create/status", fn() => LoadController("create-status"));
+
+Router::get("/create/branch", fn() => LoadView("dashboard/create-branch"));
+Router::post("/create/branch", fn() => LoadController("create-branch"));
+
+
+
+Router::get("/branchs", fn() => LoadController("branch"));
+
+
+Router::get("/login", fn() => LoadView("login"));
+Router::post("/login", fn() => LoadController("login"));
+
+Router::get("/register", fn() => LoadView("register"));
+Router::post("/register", fn() => LoadController("register"));
+
+
+
+
+
