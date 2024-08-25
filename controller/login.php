@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 
 
@@ -12,6 +11,7 @@ $password = $Login['password'];
 
 
 if ($email == $_POST['email'] && $password == $_POST['password']) {
+    $_SESSION['LOGIN_REGISTER'] = $email;
     header("Location: /");
     exit();
 } else {

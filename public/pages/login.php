@@ -11,12 +11,22 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            overflow: hidden; /* To prevent scrollbars from appearing */
         }
 
         .bg-image {
-            background-image: url("https://constructive-voices.com/wp-content/uploads/2024/04/Cardamom-Mountains-1170x669.jpg"); /* Use the path to your background image */
+            background-image: url("https://images.hdqwalls.com/wallpapers/mountains-lake-canada-nature-forest-woods-4b.jpg"); /* Use the path to your background image */
             background-size: cover;
             background-position: center;
+            position: absolute; /* Required for animation */
+            width: 100vw;
+            height: 100vh;
+            animation: moveBackground 20s linear infinite; /* Animation */
+        }
+
+        @keyframes moveBackground {
+            0% { background-position: 0 0; }
+            100% { background-position: 100% 100%; }
         }
 
         .card {
@@ -24,7 +34,6 @@
             border-radius: 15px;
             backdrop-filter: blur(10px);
         }
-
     </style>
 </head>
 <body>
@@ -55,7 +64,6 @@
                     </svg>
                 </div>
                 <?php
-                session_start();
                 if (isset($_SESSION['email_error'])) {
                     echo '<p class="text-danger">' . $_SESSION['email_error'] . '</p>';
                     unset($_SESSION['email_error']);

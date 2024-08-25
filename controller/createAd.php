@@ -14,15 +14,16 @@ $branch = (int)$_POST['branch'];
 $send = (string)$_POST['send'];
 
 //dd($_POST);
-//dd($_POST);
 
 if ($_POST['title']
     && $_POST['description']
     && $_POST['address']
     && $_POST['rooms']
-    && $_POST['price']) {
+    && $_POST['price']
+    && $_POST['branch']
+) {
 
-    $newAdsId = (new Ads())->create($title, $description, 2, 5, 3, $address, $price, $rooms);
+    $newAdsId = (new Ads())->create($title, $description, 6, 6, $branch, $address, $price, $rooms);
 
 
 

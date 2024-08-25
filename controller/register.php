@@ -1,6 +1,5 @@
 <?php
 
-session_start();
 $email = $_POST['email'];
 $password = $_POST['password'];
 $gender = $_POST['gender'];
@@ -16,7 +15,7 @@ if (!$Register) {
 
 
     if (strlen($phone) != 13) {
-        $_SESSION['phone_error'] = "Phone raqamni  to'liq  kiriting";
+        $_SESSION['phone_error'] = "Telefon raqamni  to'liq  kiriting";
         header("location: /register");
         exit();
     }
@@ -30,6 +29,7 @@ if (!$Register) {
 
     $_SESSION['EMAIL'] = $email;
     (new App\User())->create($name, $email, $password, $position, $gender, $phone);
+    $_SESSION['LOGIN_REGISTER'] = $email;
     header("Location: /");
     exit();
 } else {
