@@ -33,6 +33,9 @@ Router::get("/register", fn() => LoadView("register"));
 Router::post("/register", fn() => LoadController("register"));
 
 
+(new App\Router)->errorResponse(404);
+
+
 
 
 

@@ -74,6 +74,19 @@ class Router
             $callback();
         }
 
+    }
+
+    public  function  ErrorResponse($code)
+    {
+
+        http_response_code($code);
+        if ($code === 404) {
+
+            LoadView("404");
+        }
+        exit();
+
+
 
     }
 }
