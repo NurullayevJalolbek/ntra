@@ -76,7 +76,7 @@ class Router
 
     }
 
-    public  function  ErrorResponse($code)
+    public  static  function  ErrorResponse($code)
     {
 
         http_response_code($code);
@@ -86,7 +86,15 @@ class Router
         }
         exit();
 
-
-
     }
+
+
+    public  function logout(): void
+    {
+        session_destroy();
+
+        header('Location: /login');
+        exit();
+    }
+
 }
