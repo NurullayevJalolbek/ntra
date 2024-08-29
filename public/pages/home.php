@@ -3,6 +3,7 @@
 
 loadPartials("header");
 loadPartials("navbar");
+
 ?>
 
 

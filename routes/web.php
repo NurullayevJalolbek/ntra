@@ -29,12 +29,15 @@ Router::post("/create/branch", fn() => LoadController("create-branch"));
 Router::get("/login", fn() => LoadView("login"));
 Router::post("/login", fn() => LoadController("login"));
 
+
 Router::get("/register", fn() => LoadView("register"));
 Router::post("/register", fn() => LoadController("register"));
 
 
 Router::get("/logout", fn() => (new App\Router()) -> logout());
 
+Router::get("/admin", fn() => LoadView("dashboard/home"));
+Router::get("/profile2", fn() => LoadView(path:"profile", LoadFromPublic: false ));
 
 Router::ErrorResponse(404);
 

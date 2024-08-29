@@ -23,7 +23,7 @@ if ($_POST['title']
     && $_POST['branch']
 ) {
 
-    $newAdsId = (new Ads())->create($title, $description, 6, 6, $branch, $address, $price, $rooms);
+    $newAdsId = (new Ads())->create($title, $description, 15, 6, $branch, $address, $price, $rooms);
 
 
 

@@ -14,11 +14,10 @@ if ($email == $_POST['email'] && $password == $_POST['password']) {
     $userWithRoles = (new \App\User())->ADMIN($id);
 
     if ($userWithRoles['role_id'] === \App\Role::ADMIN) {
-        LoadView("dashboard/home");
+        redirect("admin");
 
     }
-    header("location: /");
-    exit();
+    redirect( "profile2");
 } else {
     $_SESSION['email_error'] = "Email yoki parol xato";
     header("Location: /login");
