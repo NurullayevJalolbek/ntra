@@ -1507,7 +1507,7 @@ video {
   --tw-bg-opacity: 0.5 !important;
 }
 .bg-\[url\(\'\.\.\/\.\.\/assets\/images\/01\.jpg\'\)\]{
-  background-image: url('../../assets/images/01.jpg') !important;
+  background-image: url('...jpg') !important;
 }
 .bg-gradient-to-b{
   background-image: -webkit-gradient(linear, left top, left bottom, from(var(--tw-gradient-stops))) !important;

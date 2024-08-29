@@ -68,7 +68,7 @@ function  assets( string $path )
 
     if (!file_exists($filePath)) {
         echo "fayl  assets topilmadi $filePath";
-        return;
+        return '';
     }
     return $filePath;
 

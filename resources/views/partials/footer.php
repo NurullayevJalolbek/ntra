@@ -21,11 +21,11 @@
 <!-- LTR & RTL Mode Code -->
 
 <!-- JAVASCRIPTS -->
-<script src="../../assets/libs/tobii/js/tobii.min.js"></script>
-<script src="../../assets/libs/feather-icons/feather.min.js"></script>
-<script src="../../assets/libs/simplebar/simplebar.min.js"></script>
-<script src="../../assets/js/plugins.init.js"></script>
-<script src="../../assets/js/app.js"></script>
+<script src="../../../public/dashboard/assets/libs/tobii/js/tobii.min.js"></script>
+<script src="../../../public/dashboard/assets/libs/feather-icons/feather.min.js"></script>
+<script src="../../../public/dashboard/assets/libs/simplebar/simplebar.min.js"></script>
+<script src="../../../public/dashboard/assets/js/plugins.init.js"></script>
+<script src="../../../public/dashboard/assets/js/app.js"></script>
 <!-- JAVASCRIPTS -->
 </body>
 </html>../../

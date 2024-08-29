@@ -1,7 +1,7 @@
 <?php
 
 
-LoadPartials("header");
+LoadPartials(path:"header", LoadFromPublic: false);
 
 ?>
 
@@ -518,7 +518,7 @@ LoadPartials("header");
                                     <tr>
                                         <th class="text-start border-t border-gray-100 dark:border-gray-800 px-4 py-3 font-semibold">
                                             <div class="relative md:shrink-0">
-                                                <img src="assets/images/property/1.jpg" class="object-cover size-12 min-w-[48px] rounded-md shadow dark:shadow-gray-700" alt="">
+                                                <img src="dashboard/assets/images/property/1.jpg" class="object-cover size-12 min-w-[48px] rounded-md shadow dark:shadow-gray-700" alt="">
                                             </div>
                                         </th>
                                         <td class="text-start border-t border-gray-100 dark:border-gray-800 px-4 py-3">
@@ -537,7 +537,7 @@ LoadPartials("header");
                                     <tr>
                                         <th class="text-start border-t border-gray-100 dark:border-gray-800 px-4 py-3 font-semibold">
                                             <div class="relative md:shrink-0">
-                                                <img src="assets/images/property/2.jpg" class="object-cover size-12 min-w-[48px] rounded-md shadow dark:shadow-gray-700" alt="">
+                                                <img src="dashboard/assets/images/property/2.jpg" class="object-cover size-12 min-w-[48px] rounded-md shadow dark:shadow-gray-700" alt="">
                                             </div>
                                         </th>
                                         <td class="text-start border-t border-gray-100 dark:border-gray-800 px-4 py-3">
@@ -556,7 +556,7 @@ LoadPartials("header");
                                     <tr>
                                         <th class="text-start border-t border-gray-100 dark:border-gray-800 px-4 py-3 font-semibold">
                                             <div class="relative md:shrink-0">
-                                                <img src="assets/images/property/3.jpg" class="object-cover size-12 min-w-[48px] rounded-md shadow dark:shadow-gray-700" alt="">
+                                                <img src="dashboard/assets/images/property/3.jpg" class="object-cover size-12 min-w-[48px] rounded-md shadow dark:shadow-gray-700" alt="">
                                             </div>
                                         </th>
                                         <td class="text-start border-t border-gray-100 dark:border-gray-800 px-4 py-3">
@@ -575,7 +575,7 @@ LoadPartials("header");
                                     <tr>
                                         <th class="text-start border-t border-gray-100 dark:border-gray-800 px-4 py-3 font-semibold">
                                             <div class="relative md:shrink-0">
-                                                <img src="assets/images/property/4.jpg" class="object-cover size-12 min-w-[48px] rounded-md shadow dark:shadow-gray-700" alt="">
+                                                <img src="dashboard/assets/images/property/4.jpg" class="object-cover size-12 min-w-[48px] rounded-md shadow dark:shadow-gray-700" alt="">
                                             </div>
                                         </th>
                                         <td class="text-start border-t border-gray-100 dark:border-gray-800 px-4 py-3">
@@ -594,7 +594,7 @@ LoadPartials("header");
                                     <tr>
                                         <th class="text-start border-t border-gray-100 dark:border-gray-800 px-4 py-3 font-semibold">
                                             <div class="relative md:shrink-0">
-                                                <img src="assets/images/property/5.jpg" class="object-cover size-12 min-w-[48px] rounded-md shadow dark:shadow-gray-700" alt="">
+                                                <img src="dashboard/assets/images/property/5.jpg" class="object-cover size-12 min-w-[48px] rounded-md shadow dark:shadow-gray-700" alt="">
                                             </div>
                                         </th>
                                         <td class="text-start border-t border-gray-100 dark:border-gray-800 px-4 py-3">
@@ -627,7 +627,7 @@ LoadPartials("header");
                                 <div class="flex justify-between items-center">
                                     <div class="flex items-center">
                                         <div class="relative md:shrink-0">
-                                            <img src="assets/images/property/1.jpg" class="object-cover size-14 min-w-[56px] rounded-md shadow dark:shadow-gray-700" alt="">
+                                            <img src="dashboard/assets/images/property/1.jpg" class="object-cover size-14 min-w-[56px] rounded-md shadow dark:shadow-gray-700" alt="">
                                         </div>
 
                                         <div class="ms-2">
@@ -642,7 +642,7 @@ LoadPartials("header");
                                 <div class="flex justify-between items-center mt-4">
                                     <div class="flex items-center">
                                         <div class="relative md:shrink-0">
-                                            <img src="assets/images/property/2.jpg" class="object-cover size-14 min-w-[56px] rounded-md shadow dark:shadow-gray-700" alt="">
+                                            <img src="dashboard/assets/images/property/2.jpg" class="object-cover size-14 min-w-[56px] rounded-md shadow dark:shadow-gray-700" alt="">
                                         </div>
 
                                         <div class="ms-2">
@@ -657,7 +657,7 @@ LoadPartials("header");
                                 <div class="flex justify-between items-center mt-4">
                                     <div class="flex items-center">
                                         <div class="relative md:shrink-0">
-                                            <img src="assets/images/property/3.jpg" class="object-cover size-14 min-w-[56px] rounded-md shadow dark:shadow-gray-700" alt="">
+                                            <img src="dashboard/assets/images/property/3.jpg" class="object-cover size-14 min-w-[56px] rounded-md shadow dark:shadow-gray-700" alt="">
                                         </div>
 
                                         <div class="ms-2">
@@ -672,7 +672,7 @@ LoadPartials("header");
                                 <div class="flex justify-between items-center mt-4">
                                     <div class="flex items-center">
                                         <div class="relative md:shrink-0">
-                                            <img src="assets/images/property/4.jpg" class="object-cover size-14 min-w-[56px] rounded-md shadow dark:shadow-gray-700" alt="">
+                                            <img src="dashboard/assets/images/property/4.jpg" class="object-cover size-14 min-w-[56px] rounded-md shadow dark:shadow-gray-700" alt="">
                                         </div>
 
                                         <div class="ms-2">
@@ -687,7 +687,7 @@ LoadPartials("header");
                                 <div class="flex justify-between items-center mt-4">
                                     <div class="flex items-center">
                                         <div class="relative md:shrink-0">
-                                            <img src="assets/images/property/5.jpg" class="object-cover size-14 min-w-[56px] rounded-md shadow dark:shadow-gray-700" alt="">
+                                            <img src="dashboard/assets/images/property/5.jpg" class="object-cover size-14 min-w-[56px] rounded-md shadow dark:shadow-gray-700" alt="">
                                         </div>
 
                                         <div class="ms-2">
@@ -743,15 +743,8 @@ LoadPartials("header");
     </a>
 </div>
 <!-- LTR & RTL Mode Code -->
+<?php
 
-<!-- JAVASCRIPTS -->
-<script src="assets/libs/jsvectormap/jsvectormap.min.js"></script>
-<script src="assets/libs/jsvectormap/maps/world.js"></script>
-<script src="assets/js/jsvectormap.init.js"></script>
-<script src="assets/libs/apexcharts/apexcharts.min.js"></script>
-<script src="assets/libs/feather-icons/feather.min.js"></script>
-<script src="assets/libs/simplebar/simplebar.min.js"></script>
-<script src="assets/js/plugins.init.js"></script>
-<script src="assets/js/app.js"></script>
-<!-- JAVASCRIPTS -->
-</body>
+LoadPartials(path:"footer", LoadFromPublic: false);
+
+?>

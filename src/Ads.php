@@ -83,10 +83,24 @@ class Ads
 
     public function getAds()
     {
-        return $this->pdo->query("SELECT *,ads.id AS id, ads.address AS address  FROM ads  JOIN  branch 
-        ON  branch.id = ads.branch_id ")->fetchAll(PDO::FETCH_ASSOC);
+        $query = "SELECT *, ads.id AS id, ads.address AS address, ads_image.name AS image
+                  FROM ads
+                    JOIN branch ON branch.id = ads.branch_id
+                    LEFT JOIN ads_image ON ads.id = ads_image.ads_id";
+        return $this->pdo->query($query)->fetchAll();
 
+//        return $this->pdo->query("SELECT *,ads.id AS id, ads.address AS address  FROM ads  JOIN  branch
+//        ON  branch.id = ads.branch_id ")->fetchAll(PDO::FETCH_ASSOC);
 
+    }
+    public function getUsersAds(int $userId)
+    {
+        $query = "SELECT *, ads.id AS id, ads.address AS address, ads_image.name AS image
+                  FROM ads
+                    JOIN branch ON branch.id = ads.branch_id
+                    LEFT JOIN ads_image ON ads.id = ads_image.ads_id
+                  WHERE user_id = $userId"; // FIXME: Prepare userId //FIXME: Prepare userId
+        return $this->pdo->query($query)->fetchAll();
     }
 }
 

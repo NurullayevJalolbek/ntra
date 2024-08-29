@@ -3,6 +3,7 @@ declare( strict_types = 1 );
 
 
 use App\Router;
+use Controller\UserController;
 
 Router::get('/', fn() => LoadController("home"));
 
@@ -37,7 +38,7 @@ Router::post("/register", fn() => LoadController("register"));
 Router::get("/logout", fn() => (new App\Router()) -> logout());
 
 Router::get("/admin", fn() => LoadView("dashboard/home"));
-Router::get("/profile2", fn() => LoadView(path:"profile", LoadFromPublic: false ));
+Router::get("/profile2", fn() => (new UserController()) -> LoadProfile());
 
 Router::ErrorResponse(404);
 
