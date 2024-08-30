@@ -99,7 +99,7 @@ class Ads
                   FROM ads
                     JOIN branch ON branch.id = ads.branch_id
                     LEFT JOIN ads_image ON ads.id = ads_image.ads_id
-                  WHERE user_id = $userId"; // FIXME: Prepare userId //FIXME: Prepare userId
+                  WHERE user_id = $userId"; // FIXME: Prepare userId
         return $this->pdo->query($query)->fetchAll();
     }
 }

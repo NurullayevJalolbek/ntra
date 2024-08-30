@@ -157,7 +157,3 @@ loadPartials('header');
 
         <!--End page-content" -->
     </div>
-    <!-- page-wrapper -->
-<?php
-loadPartials('footer');
-?>

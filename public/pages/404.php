@@ -39,7 +39,7 @@
         <div class="grid grid-cols-1">
             <div class="flex flex-col min-h-screen justify-center md:px-10 py-10 px-4">
                 <div class="text-center">
-                    <a href="index.html"><img src="assets/images/logo-icon-64.png" class="mx-auto" alt=""></a>
+                    <a href="/"><img src="assets/images/logo-icon-64.png" class="mx-auto" alt=""></a>
                 </div>
                 <div class="title-heading text-center my-auto">
                     <img src="assets/images/error.png" class="mx-auto" alt="">

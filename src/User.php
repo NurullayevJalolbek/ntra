@@ -13,7 +13,7 @@ class User
         $this->pdo = DB::connect();
     }
 
-    public function create($username, $email, $password, $position, $gender, $phone)
+    public function create($username, $email, $password, $position, $gender, $phone): void
     {
 
         $sql = "INSERT INTO users (username, email, password, position, gender, phone, created_at) VALUES (:username, :email, :password, :position, :gender, :phone, NOW())";

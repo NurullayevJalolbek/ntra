@@ -131,10 +131,10 @@ LoadPartials(path:"header", LoadFromPublic: false);
                 <div class="flex items-center space-x-1">
                     <!-- Logo -->
                     <a href="#" class="xl:hidden block me-2">
-                        <img src="assets/images/logo-icon-32.png" class="md:hidden block" alt="">
+                        <img src="dashboard/assets/images/logo-icon-32.png" class="md:hidden block" alt="">
                         <span class="md:block hidden">
-                                    <img src="assets/images/logo-dark.png" class="inline-block dark:hidden" alt="">
-                                    <img src="assets/images/logo-light.png" class="hidden dark:inline-block" alt="">
+                                    <img src="dashboard/assets/images/logo-dark.png" class="inline-block dark:hidden" alt="">
+                                    <img src="dashboard/assets/images/logo-light.png" class="hidden dark:inline-block" alt="">
                                 </span>
                     </a>
                     <!-- Logo -->
@@ -149,7 +149,7 @@ LoadPartials(path:"header", LoadFromPublic: false);
                     <div class="ps-1.5">
                         <div class="form-icon relative sm:block hidden">
                             <i class="mdi mdi-magnify absolute top-1/2 -translate-y-1/2 mt-[1px] start-3"></i>
-                            <input type="text" class="form-input w-56 ps-9 py-2 px-3 h-8 bg-transparent dark:bg-slate-900 dark:text-slate-200 rounded-md outline-none border border-gray-100 dark:border-gray-800 focus:ring-0 bg-white" name="s" id="searchItem" placeholder="Search...">
+                            <label for="searchItem"></label><input type="text" class="form-input w-56 ps-9 py-2 px-3 h-8 bg-transparent dark:bg-slate-900 dark:text-slate-200 rounded-md outline-none border border-gray-100 dark:border-gray-800 focus:ring-0 bg-white" name="s" id="searchItem" placeholder="Search...">
                         </div>
                     </div>
                     <!-- Searchbar -->
@@ -159,25 +159,9 @@ LoadPartials(path:"header", LoadFromPublic: false);
                     <!-- Country Dropdown -->
                     <li class="dropdown inline-block relative">
                         <button data-dropdown-toggle="dropdown" class="dropdown-toggle size-8 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-[20px] text-center bg-gray-50 dark:bg-slate-800 hover:bg-gray-100 dark:hover:bg-slate-700 border border-gray-100 dark:border-gray-800 text-slate-900 dark:text-white rounded-md" type="button">
-                            <img src="assets/images/flags/usa.png" class="size-6 rounded-md" alt="">
+                            <img src="dashboard/assets/images/flags/usa.png" class="size-6 rounded-md" alt="">
                         </button>
                         <!-- Dropdown menu -->
-                        <div class="dropdown-menu absolute end-0 m-0 mt-4 z-10 w-36 rounded-md overflow-hidden bg-white dark:bg-slate-900 shadow dark:shadow-gray-700 hidden" onclick="event.stopPropagation();">
-                            <ul class="list-none py-2 text-start">
-                                <li class="my-1">
-                                    <a href="" class="flex items-center text-[15px] font-medium py-1.5 px-4 dark:text-white/70 hover:text-green-600 dark:hover:text-white"><img src="assets/images/flags/germany.png" class="size-6 rounded-md me-2 shadow dark:shadow-gray-700" alt=""> German</a>
-                                </li>
-                                <li class="my-1">
-                                    <a href="" class="flex items-center text-[15px] font-medium py-1.5 px-4 dark:text-white/70 hover:text-green-600 dark:hover:text-white"><img src="assets/images/flags/italy.png" class="size-6 rounded-md me-2 shadow dark:shadow-gray-700" alt=""> Italian</a>
-                                </li>
-                                <li class="my-1">
-                                    <a href="" class="flex items-center text-[15px] font-medium py-1.5 px-4 dark:text-white/70 hover:text-green-600 dark:hover:text-white"><img src="assets/images/flags/russia.png" class="size-6 rounded-md me-2 shadow dark:shadow-gray-700" alt=""> Russian</a>
-                                </li>
-                                <li class="my-1">
-                                    <a href="" class="flex items-center text-[15px] font-medium py-1.5 px-4 dark:text-white/70 hover:text-green-600 dark:hover:text-white"><img src="assets/images/flags/spain.png" class="size-6 rounded-md me-2 shadow dark:shadow-gray-700" alt=""> Spanish</a>
-                                </li>
-                            </ul>
-                        </div>
                     </li>
                     <!-- Country Dropdown -->
 

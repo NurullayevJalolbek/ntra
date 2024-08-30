@@ -1,6 +1,8 @@
 <?php
 
 
+use JetBrains\PhpStorm\NoReturn;
+
 function dd($args)
 {
     echo '<pre>';
@@ -16,7 +18,7 @@ function  basePath($path)
 {
     return __DIR__.$path;
 }
-function  LoadView($path, array | null $args = null, bool $LoadFromPublic = true )
+function  LoadView($path, array | null $args = null, bool $LoadFromPublic = true ): void
 {
     if ( $LoadFromPublic ) {
         $file = "/public/pages/$path.php";
@@ -89,7 +91,7 @@ function  getUserEmailSession()
 }
 
 
-function  redirect(string $url):void
+#[NoReturn] function  redirect(string $url):void
 {
     header("Location: $url");
     exit();

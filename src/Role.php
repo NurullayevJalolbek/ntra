@@ -5,8 +5,8 @@ namespace App;
 class Role
 {
 
-    const  ADMIN = 1;
-    const  USER = 2;
+    const  int ADMIN = 1;
+    const  int USER = 2;
 
 
 
