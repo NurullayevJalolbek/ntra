@@ -5,4 +5,4 @@ use App\Branch;
 
 $branches = (new Branch())->getBranches();
 
-LoadView("brenches", ["branches" => $branches]);
+LoadView("/dashboard/brenches", ["branches" => $branches]);

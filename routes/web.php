@@ -27,7 +27,7 @@ Router::patch('/ads/update/{id}', fn(int $id) => (new AdController())->update($i
 Router::get("/create/branch", fn() => LoadView("dashboard/create-branch"));
 Router::post("/create/branch", fn() => LoadController("create-branch"));
 
-Router::get('/branches', fn() => LoadController("brenches"));
+Router::get('/admin/branches', fn() => LoadController("brenches"));
 
 
 Router::delete('/ads/delete/{id}', fn(int $id) => (new AdController())->delete($id));
@@ -47,6 +47,7 @@ Router::post("/register", fn() => LoadController("register"));
 Router::get("/logout", fn() => (new App\Router()) -> logout());
 
 Router::get("/admin", fn() => LoadView("dashboard/home"), "auth");
+Router::get("/admin/ads", fn() => LoadController("home"), "auth");
 Router::get("/profile2", fn() => (new UserController()) -> LoadProfile(), "auth");
 
 Router::ErrorResponse(404);

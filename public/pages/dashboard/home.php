@@ -28,15 +28,15 @@ LoadPartials(path:"header", LoadFromPublic: false);
 
             <ul class="sidebar-menu border-t border-white/10" data-simplebar style="height: calc(100% - 70px);">
                 <li>
-                    <a href="index.html"><i class="mdi mdi-chart-bell-curve-cumulative me-2"></i>Dashboard</a>
+                    <a href="/admin"><i class="mdi mdi-chart-bell-curve-cumulative me-2"></i>Dashboard</a>
                 </li>
 
                 <li>
-                    <a href="/"><i class="mdi mdi-home-city me-2"></i>E'lonlar </a>
+                    <a href="/admin/ads"><i class="mdi mdi-home-city me-2"></i>E'lonlar </a>
                 </li>
 
                 <li>
-                    <a href="/branches"><i class="mdi mdi-home-heart me-2"></i>Filiallar</a>
+                    <a href="/admin/branches"><i class="mdi mdi-home-heart me-2"></i>Filiallar</a>
                 </li>
 
                 <li>

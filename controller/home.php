@@ -5,5 +5,5 @@ use App\Ads;
 
 $ads = (new Ads())->getAds();
 
-loadView("home", ["ads" => $ads]);
+loadView("/dashboard/ads", ["ads" => $ads]);
 

@@ -1,10 +1,14 @@
 <?php
 
 
-LoadPartials(path: "header", LoadFromPublic: false);
-
+LoadPartials(path: "header", LoadFromPublic: false);;
+/**
+ * @var  $ads
+ */
+//dd($ads);
 
 ?>
+
     <body class="font-body text-base text-black dark:text-white dark:bg-slate-900">
 
     <div class="page-wrapper toggled">
@@ -294,8 +298,9 @@ LoadPartials(path: "header", LoadFromPublic: false);
 
             <div class="container-fluid relative px-3">
                 <div class="layout-specing">
-                    <!-- Start Content -->
 
+
+                    <!-- Start Content -->
 
                     <div class="md:flex justify-between items-center">
                         <h5 class="text-lg font-semibold">Explore Properties</h5>
@@ -311,64 +316,42 @@ LoadPartials(path: "header", LoadFromPublic: false);
                         </ul>
                     </div>
                     <!--                        <div class="container relative">-->
-                    <div class="page-wrapper toggled">
-                        <!-- Start Page Content -->
+                    <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
 
-                        <main class="page-content bg-gray-50 dark:bg-slate-800">
-                            <div class="container-fluid relative px-3">
-                                <div class="layout-specing">
-                                    <!-- Start Content -->
+                        <?php
 
-                                    <div class="rounded-md shadow dark:shadow-gray-700 p-6 bg-white dark:bg-slate-900 h-fit">
-                                        <div>
-                                            <p class="font-medium mb-4">Upload your property image here, Please click
-                                                "Upload
-                                                Image" Button.</p>
-                                            <div class="preview-box flex justify-center rounded-md shadow dark:shadow-gray-800 overflow-hidden bg-gray-50 dark:bg-slate-800 text-slate-400 p-2 text-center small w-auto max-h-60">
-                                                Supports JPG, PNG and MP4 videos. Max file size : 10MB.
-                                            </div>
-                                            <input form="ads-create" type="file" id="input-file" name="image"
-                                                   accept="image/*"
-                                                   onchange={handleChange()} hidden>
-                                            <label class="btn-upload btn bg-green-600 hover:bg-green-700 border-green-600 hover:border-green-700 text-white rounded-md mt-6 cursor-pointer"
-                                                   for="input-file">Upload Image</label>
-                                        </div>
-                                    </div>
+                        /**
+                         * @var  $branches
+                         */
 
 
-                                    <div class="container relative">
-                                        <div class="grid md:grid-cols-2 grid-cols-1 gap-6 mt-6">
-                                            <div class="rounded-md shadow dark:shadow-gray-700 p-6 bg-white dark:bg-slate-900 h-fit">
-                                                <form id="ads-create" action="/create/branch" method="post"
-                                                      enctype="multipart/form-data">
-                                                    <div class="grid grid-cols-12 gap-5">
-                                                        <div class="col-span-12">
-                                                            <label for="title" class="font-medium">Adress</label>
-                                                            <input name="Adress" id="title" type="text"
-                                                                   class="form-input mt-2"
-                                                                   placeholder="Adress">
-                                                        </div>
-                                                        <div class="col-span-12">
-                                                            <label for="title" class="font-medium">Name </label>
-                                                            <input name="name" id="title" type="text"
-                                                                   class="form-input mt-2"
-                                                                   placeholder="Name">
-                                                        </div>
-                                                    </div>
+                        foreach ($branches as $ad): ?>
 
-                                                    <button type="submit" id="submit"
-                                                            class="btn bg-green-600 hover:bg-green-700 border-green-600 hover:border-green-700 text-white rounded-md mt-5">
-                                                        Yuborish
-                                                    </button>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- End Content -->
+                            <div class="group rounded-xl bg-white dark:bg-slate-900 shadow hover:shadow-xl dark:hover:shadow-xl dark:shadow-gray-700 dark:hover:shadow-gray-700 overflow-hidden ease-in-out duration-500">
+                                <div class="relative">
+                                    <img src="assets/images/property/1.jpg" alt="">
                                 </div>
-                            </div><!--end container-->
-                        </main>
-                    </div>
+
+                                <div class="p-6">
+                                    <div class="pb-6">
+                                        id -
+                                        <?php echo $ad->id ?></a>
+                                    </div>
+
+                                    <span class="text-slate-400">Addres</span>
+                                    <p class="text-lg font-medium"><?php echo $ad->address; ?></p>
+
+                                    <span class="text-slate-400">Name</span>
+                                    <p class="text-lg font-medium"><?php echo $ad->name; ?></p>
+
+                                    <span class="text-slate-400">Soati</span>
+                                    <p class="text-lg font-medium"><?php echo $ad->created_at; ?></p>
+
+                                </div>
+                            </div><!--end property content-->
+
+                        <?php endforeach; ?>
+                    </div><!--end container-->
                 </div> <!-- End Content -->
             </div><!--end container-->
         </main>
