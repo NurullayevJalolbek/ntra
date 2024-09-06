@@ -88,5 +88,16 @@ class User
 
     }
 
+    public  function  getUser(string $email)
+    {
+
+        $sql = "SELECT * FROM users WHERE email = :email";
+        $stmt = $this -> pdo -> prepare($sql);
+        $stmt -> bindParam(':email', $email, PDO::PARAM_STR);
+        $stmt -> execute();
+        return $stmt->fetch(PDO::FETCH_OBJ);
+
+    }
+
 
 }
