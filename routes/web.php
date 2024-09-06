@@ -47,7 +47,7 @@ Router::post("/register", fn() => LoadController("register"));
 Router::get("/logout", fn() => (new App\Router()) -> logout());
 
 Router::get("/admin", fn() => LoadView("dashboard/home"), "auth");
-Router::get("/admin/ads", fn() => LoadController("home"), "auth");
+Router::get("/admin/ads", fn() => LoadController("home_ads"), "auth");
 Router::get("/profile2", fn() => (new UserController()) -> LoadProfile(), "auth");
 
 Router::ErrorResponse(404);

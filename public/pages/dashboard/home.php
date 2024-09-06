@@ -243,7 +243,11 @@ LoadPartials(path:"header", LoadFromPublic: false);
                     <!-- User/Profile Dropdown -->
                     <li class="dropdown inline-block relative">
                         <button data-dropdown-toggle="dropdown" class="dropdown-toggle items-center" type="button">
-                            <span class="size-8 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-[20px] text-center bg-gray-50 dark:bg-slate-800 hover:bg-gray-100 dark:hover:bg-slate-700 border border-gray-100 dark:border-gray-800 text-slate-900 dark:text-white rounded-md"><img src="assets/images/client/07.jpg" class="rounded-md" alt=""></span>
+                            <span class="size-8 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-[20px] text-center bg-gray-50 dark:bg-slate-800 hover:bg-gray-100 dark:hover:bg-slate-700 border border-gray-100 dark:border-gray-800 text-slate-900 dark:text-white rounded-md">
+<!--                           <a href="/profile2">-->
+                                    <img src="assets/images/client/07.jpg" class="rounded-md" alt="">
+<!--                           </a>-->
+                            </span>
                         </button>
                         <!-- Dropdown menu -->
                         <div class="dropdown-menu absolute end-0 m-0 mt-4 z-10 w-44 rounded-md overflow-hidden bg-white dark:bg-slate-900 shadow dark:shadow-gray-700 hidden" onclick="event.stopPropagation();">

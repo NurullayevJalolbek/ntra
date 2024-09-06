@@ -375,7 +375,7 @@ LoadPartials(path: "header", LoadFromPublic: false);
     </div>
 <?php
 
-LoadPartials(path: "footer", LoadFromPublic: false);
+LoadPartials( "footer");
 
 ?>
 <?php

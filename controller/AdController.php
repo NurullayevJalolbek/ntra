@@ -11,31 +11,45 @@ class AdController
 {
 
 
-    public function edit(int $id): void{
-        $brenches = (new Branch())-> getBranches();
+    public function edit(int $id): void
+    {
+        $brenches = (new Branch())->getBranches();
         $status = (new Status())->getStatuses();
 
         loadView('dashboard/create-ad', ['ads' => (new \App\Ads())->getAd($id), 'brenches' => $brenches, 'status' => $status]);
     }
 
-    #[NoReturn] public  function update(int $id): void
+
+
+
+    public function update(int $id): void
     {
-//        if($_FILES['image']['error'] != 4){ {
-//            $uploadPath = basePath("/public/assets/images/ads");
-//            $Images = new \App\Image();
-//        }
 
+        $ad = new \App\Ads();
+        $image = new \App\Image();
 
-        $ad = new Ads();
+        if ($_FILES['image']['error'] != 4) {
+            $uploadPath = basePath("/public/assets/images/ads/");
+            $imageDetails = $image->getImagesByAdId($id);
+            $newFileName = $image->handleUpload();
+
+            if ($imageDetails && file_exists($uploadPath . $imageDetails->name)) {
+                unlink($uploadPath . $imageDetails->name);
+            }
+
+            $image->updateImage($imageDetails->id, $newFileName);
+
+        }
 
         $ad->updateAds($id, $_POST['title'], $_POST['description'], $_SESSION['user']['id'], $_POST['status_id'],
             $_POST['branch_id'], $_POST['address'], $_POST['price'], $_POST['rooms']);
 
         redirect('/profile2');
 
+
     }
 
-    #[NoReturn] public function  delete(int $id): void
+    #[NoReturn] public function delete(int $id): void
     {
 //        dd($id);
         (new Ads())->deleteAds($id);
@@ -43,9 +57,9 @@ class AdController
 
     }
 
-    public function  create(): void
+    public function create(): void
     {
-        $brenches = (new Branch())-> getBranches();
+        $brenches = (new Branch())->getBranches();
         $status = (new Status())->getStatuses();
 
         loadView('dashboard/create-ad', ['brenches' => $brenches, 'status' => $status]);
