@@ -45,7 +45,9 @@ Router::get("/admin/ads", fn() => LoadController("home_ads"), "auth");
 Router::get("/admin/users", fn() => LoadView("dashboard/users"), "auth");
 
 
-Router::get("/profile2", fn() => (new UserController()) -> LoadProfile(), "auth");
+Router::get("/profile", fn() => (new UserController()) -> LoadProfile(), "auth");
+Router::get("/profile/setting", fn() => (new UserController()) -> ProfileSettingView(), "auth");
+Router::post("/profile/setting", fn() => (new UserController()) -> ProfileUpdateUser(), "ath");
 
 Router::ErrorResponse(404);
 

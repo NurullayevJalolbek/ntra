@@ -7,7 +7,7 @@ LoadPartials(path: 'header', LoadFromPublic: false);
         <?php LoadPartials(path: "sidebar", LoadFromPublic: false); ?>
 
         <main class="page-content bg-gray-50 dark:bg-slate-800">
-            <?php LoadPartials(path:'top-header', LoadFromPublic: false);?>
+            <?php LoadPartials(path: 'top-header', LoadFromPublic: false); ?>
 
             <div class="container-fluid relative px-3">
                 <div class="layout-specing">
@@ -176,13 +176,18 @@ LoadPartials(path: 'header', LoadFromPublic: false);
                                                             </div>
                                                         </li>
                                                         <li>
-                                                            <form action="ads/delete/<?=$ad['id']?>" method="post">
+                                                            <form action="ads/delete/<?= $ad['id'] ?>" method="post">
                                                                 <input type="hidden" name="_method" value="delete">
                                                                 <button type="submit" id="submit"
-                                                                        class="btn bg-red-600 hover:bg-red-700 border-red-600 hover:border-red-700 text-white rounded-md mt-2 px-3 py-1 text-sm">
-                                                                    O'chirish
+                                                                        style="background:none; border:none; padding:0;">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                                         height="16" fill="red" class="bi bi-trash3"
+                                                                         viewBox="0 0 16 16">
+                                                                        <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5M11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47M8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5"/>
+                                                                    </svg>
                                                                 </button>
                                                             </form>
+
                                                         </li>
                                                     </ul>
 
@@ -198,23 +203,6 @@ LoadPartials(path: 'header', LoadFromPublic: false);
                     <!-- End Content -->
                 </div>
             </div><!--end container-->
-
-            <!-- Footer Start -->
-            <footer class="shadow dark:shadow-gray-700 bg-white dark:bg-slate-900 px-6 py-4">
-                <div class="container-fluid">
-                    <div class="grid grid-cols-1">
-                        <div class="sm:text-start text-center mx-md-2">
-                            <p class="mb-0 text-slate-400">©
-                                <script>document.write(new Date().getFullYear())</script>
-                                Hously. Najot ta'lim <i class="mdi mdi-heart text-red-600"></i> by <a
-                                        href="https://shreethemes.in/" target="_blank"
-                                        class="text-reset">PHP Bootcamp N1 </a>.
-                            </p>
-                        </div><!--end col-->
-                    </div><!--end grid-->
-                </div><!--end container-->
-            </footer><!--end footer-->
-            <!-- End -->
         </main>
         <!--End page-content" -->
     </div>

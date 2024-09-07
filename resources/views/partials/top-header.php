@@ -178,17 +178,12 @@
                      onclick="event.stopPropagation();">
                     <ul class="py-2 text-start">
                         <li>
-                            <a href="profile.html"
+                            <a href="/profile"
                                class="block py-1 px-4 dark:text-white/70 hover:text-green-600 dark:hover:text-white"><i
                                         class="mdi mdi-account-outline me-2"></i>Profile</a>
                         </li>
                         <li>
-                            <a href="chat.html"
-                               class="block py-1 px-4 dark:text-white/70 hover:text-green-600 dark:hover:text-white"><i
-                                        class="mdi mdi-chat-outline me-2"></i>Chat</a>
-                        </li>
-                        <li>
-                            <a href="profile-setting.html"
+                            <a href="/profile/setting"
                                class="block py-1 px-4 dark:text-white/70 hover:text-green-600 dark:hover:text-white"><i
                                         class="mdi mdi-cog-outline me-2"></i>Settings</a>
                         </li>
@@ -199,7 +194,7 @@
                                         class="mdi mdi-lock-outline me-2"></i>Lockscreen</a>
                         </li>
                         <li>
-                            <a href="login.html"
+                            <a href="/logout"
                                class="block py-1 px-4 dark:text-white/70 hover:text-green-600 dark:hover:text-white"><i
                                         class="mdi mdi-logout me-2"></i>Logout</a>
                         </li>

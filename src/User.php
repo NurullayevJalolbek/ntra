@@ -28,19 +28,33 @@ class User
 
     }
 
-    public function updateUser($id, $username, $position, $gender, $phone)
-    {
-
-        $sql = "UPDATE users SET username = :username, position = :position, gender = :gender, phone = :phone WHERE id = :id";
+    function updateUser($id, $email, $gender, $position, $name) {
+        $sql = "UPDATE users SET email = :email, gender = :gender, position = :position, username = :name WHERE id = :id";
         $stmt = $this->pdo->prepare($sql);
-        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-        $stmt->bindParam(':username', $username, PDO::PARAM_STR);
-        $stmt->bindParam(':position', $position, PDO::PARAM_STR);
-        $stmt->bindParam(':gender', $gender, PDO::PARAM_STR);
-        $stmt->bindParam(':phone', $phone, PDO::PARAM_STR);
-        $stmt->execute();
 
+        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':gender', $gender);
+        $stmt->bindParam(':position', $position);
+        $stmt->bindParam(':name', $name);
+        $stmt->bindParam(':id', $id);
+
+        $stmt->execute();
     }
+    public function updateUserContact($id, $phoneNumber, $confirmPassword) {
+        $sql = "UPDATE users 
+        SET phone = :phoneNumber, password = :confirmPassword
+        WHERE id = :id";
+
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindParam(':phoneNumber', $phoneNumber);
+        $stmt->bindParam(':id', $id);
+        $stmt->bindParam(':confirmPassword', $confirmPassword);
+
+        return $stmt->execute();
+    }
+
+
+
 
     public function deleteUsers($id)
     {
@@ -97,6 +111,13 @@ class User
         $stmt -> execute();
         return $stmt->fetch(PDO::FETCH_OBJ);
 
+    }
+
+    public function getUsers()
+    {
+        $sql = "SELECT * FROM users";
+        $stmt = $this->pdo->query($sql);
+        return $stmt->fetchAll(PDO::FETCH_OBJ);
     }
 
 

@@ -44,16 +44,21 @@ class AdController
         $ad->updateAds($id, $_POST['title'], $_POST['description'], $_SESSION['user']['id'], $_POST['status_id'],
             $_POST['branch_id'], $_POST['address'], $_POST['price'], $_POST['rooms']);
 
-        redirect('/profile2');
+        redirect('/profile');
 
 
     }
 
     #[NoReturn] public function delete(int $id): void
     {
-//        dd($id);
+        $image = new \App\Image();
+        $uploadPath = basePath("/public/assets/images/ads/");
+        $imageDetails = $image->getImagesByAdId($id);
+        if ($imageDetails && file_exists($uploadPath . $imageDetails->name)) {
+            unlink($uploadPath . $imageDetails->name);
+        }
         (new Ads())->deleteAds($id);
-        redirect('/profile2');
+        redirect('/profile');
 
     }
 

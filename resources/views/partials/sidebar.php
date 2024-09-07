@@ -23,14 +23,23 @@
             </li>
 
             <li class="sidebar-dropdown">
-                <a href="javascript:void(0)"><i class="mdi mdi-account-edit me-2"></i>Foydalanuvchilar </a>
+                <a href="javascript:void(0)"><i class="mdi mdi-account-edit me-2"></i>Profile </a>
                 <div class="sidebar-submenu">
                     <ul>
-                        <li><a href="/admin/users">Profile</a></li>
-                        <li><a href="profile-setting.html">Profile Settings</a></li>
+                        <li><a href="/profile">Profile</a></li>
+                        <li><a href="/profile/setting">Profile Settings</a></li>
                     </ul>
                 </div>
             </li>
+
+
+
+
+            <li class="sidebar-dropdown">
+                <a href="/admin/users"><i class="mdi mdi-account-group-outline me-2"></i>Foydalanuvchilar </a>
+            </li>
+
+
 
             <li class="sidebar-dropdown">
                 <a href="javascript:void(0)"><i class="mdi mdi-post-outline me-2"></i>Blog</a>
