@@ -15,7 +15,7 @@ class UserController
         $ads = (new Ads())-> getUsersAds((int )$_SESSION['user']['id']);
 
 
-        LoadView("profile", ["ads" => $ads], false);
+        LoadView("profile", ["ads" => $ads]);
 
 
     }

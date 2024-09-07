@@ -26,7 +26,7 @@
                 <a href="javascript:void(0)"><i class="mdi mdi-account-edit me-2"></i>Foydalanuvchilar </a>
                 <div class="sidebar-submenu">
                     <ul>
-                        <li><a href="profile.html">Profile</a></li>
+                        <li><a href="/admin/users">Profile</a></li>
                         <li><a href="profile-setting.html">Profile Settings</a></li>
                     </ul>
                 </div>

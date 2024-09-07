@@ -18,17 +18,12 @@ function  basePath($path)
 {
     return __DIR__.$path;
 }
-function  LoadView($path, array | null $args = null, bool $LoadFromPublic = true ): void
+function  LoadView($path, array | null $args = null): void
 {
-    if ( $LoadFromPublic ) {
-        $file = "/public/pages/$path.php";
-    }else{
-        $file = "/resources/views/pages/$path.php";
-
-    }
-
+    $file = "/resources/views/pages/$path.php";
 
     $filePath = basePath($file);
+
     if (!file_exists($filePath)) {
         echo "fayl topilmadi $filePath";
         return;
