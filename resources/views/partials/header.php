@@ -21,6 +21,12 @@
     <link href="/dashboard/assets/libs/simplebar/simplebar.min.css" rel="stylesheet">
     <link href="/dashboard/assets/libs/@mdi/font/css/materialdesignicons.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="/dashboard/assets/css/tailwind.min.css">
+    <style>
+        .text-danger {
+            color: red;
+        }
+    </style>
+
 
 </head>
 

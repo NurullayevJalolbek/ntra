@@ -189,7 +189,7 @@
                         </li>
                         <li class="border-t border-gray-100 dark:border-gray-800 my-2"></li>
                         <li>
-                            <a href="lock-screen.html"
+                            <a href="/lock/scren"
                                class="block py-1 px-4 dark:text-white/70 hover:text-green-600 dark:hover:text-white"><i
                                         class="mdi mdi-lock-outline me-2"></i>Lockscreen</a>
                         </li>

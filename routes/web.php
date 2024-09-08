@@ -49,6 +49,21 @@ Router::get("/profile", fn() => (new UserController()) -> LoadProfile(), "auth")
 Router::get("/profile/setting", fn() => (new UserController()) -> ProfileSettingView(), "auth");
 Router::post("/profile/setting", fn() => (new UserController()) -> ProfileUpdateUser(), "ath");
 
+
+
+Router::get("/lock/scren", fn() => LoadView("lock-screen"), "auth");
+Router::post("/lock/scren", fn() => LoadController("lock-screen"), "auth");
+
+
+
+
+
+
+
+
+
+
+
 Router::ErrorResponse(404);
 
 
