@@ -71,4 +71,24 @@ class AdController
 
     }
 
+    public function search()
+    {
+//        dd($_GET);
+        $branch = $_GET['branch'] ?$_GET['branch'] : null;
+        $searchPhrase = $_REQUEST['search_phrase'];
+        $ads          = (new Ads())->search($searchPhrase, $branch);
+        loadView('home', ['ads' => $ads]);
+    }
+
+    public  function  home()
+    {
+        $ads = (new Ads())->getAds();
+
+        $branches = (new Branch())->getBranches();
+
+
+        loadView('home', ['ads' => $ads, 'branches' => $branches]);
+
+    }
+
 }

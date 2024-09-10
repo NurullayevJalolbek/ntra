@@ -8,6 +8,11 @@ class Image
 {
     private PDO $pdo;
 
+        const  DEFAULT_IMAGE="default2.jpg";
+        const  DEFAULT_PATH="../../assets/images/ads/";
+
+
+
     public function __construct()
     {
         $this->pdo = DB::connect();
@@ -72,6 +77,20 @@ class Image
 
         return $filename;
     }
+
+//    public static function show(string|null $file = null): string
+//    {
+//        return $file ? self::DEFAULT_PATH . $file : self::DEFAULT_PATH.self::DEFAULT_IMAGE;
+//    }
+
+
+
+
+
+
+
+
+
 
 
 }

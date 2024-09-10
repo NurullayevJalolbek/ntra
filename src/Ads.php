@@ -77,7 +77,7 @@ class Ads
         $stmt->bindParam(':id', $id);
         $stmt->execute();
 
-        return $stmt->fetch(PDO::FETCH_OBJ );
+        return $stmt->fetch(PDO::FETCH_OBJ);
     }
 
 
@@ -93,6 +93,7 @@ class Ads
 //        ON  branch.id = ads.branch_id ")->fetchAll(PDO::FETCH_ASSOC);
 
     }
+
     public function getUsersAds(int $userId)
     {
         $query = "SELECT *, ads.id AS id, ads.address AS address, ads_image.name AS image
@@ -102,7 +103,39 @@ class Ads
                   WHERE user_id = $userId"; // FIXME: Prepare userId
         return $this->pdo->query($query)->fetchAll();
     }
+
+    public function search(string $searchPhrase, string|null $branch = null): false|array
+    {
+        $searchPhrase = "%$searchPhrase%";
+        $query = "SELECT *, 
+                     ads.id AS id,
+                     ads.address AS address,
+                     ads_image.name AS image
+              FROM ads
+              JOIN branch ON branch.id = ads.branch_id
+              LEFT JOIN ads_image ON ads.id = ads_image.ads_id
+              WHERE (title LIKE :searchPhrase
+                 OR ads.description LIKE :searchPhrase)";
+
+        if ($branch) {
+            $query .= " AND branch_id = :branch";
+        }
+
+        $stmt = $this->pdo->prepare($query);
+
+        $stmt->bindParam(':searchPhrase', $searchPhrase);
+
+        if ($branch) {
+            $stmt->bindParam(':branch', $branch);
+        }
+
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+
 }
+
+
 
 
 

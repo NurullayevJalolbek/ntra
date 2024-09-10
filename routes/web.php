@@ -6,7 +6,7 @@ use App\Router;
 use Controller\AdController;
 use Controller\UserController;
 
-Router::get('/', fn() => LoadController("home"));
+Router::get('/', fn() => (new AdController())-> home());
 
 Router::get('/ads/{id}', function(int $id){
     LoadController("showAd", ['id' => $id]);
@@ -50,13 +50,10 @@ Router::get("/profile/setting", fn() => (new UserController()) -> ProfileSetting
 Router::post("/profile/setting", fn() => (new UserController()) -> ProfileUpdateUser(), "ath");
 
 
+Router::get("/search", fn() => (new AdController())->search());
 
 Router::get("/lock/scren", fn() => LoadView("lock-screen"), "auth");
-Router::post("/lock/scren", fn() => LoadController("lock-screen"), "auth");
-
-
-
-
+Router::get("/lock/scren", fn() => LoadController("lock-screen"));
 
 
 
